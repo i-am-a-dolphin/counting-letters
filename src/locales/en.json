@@ -1,0 +1,10 @@
+{
+  "title": "Letter Counter",
+  "description": "Accurately counts the number of characters and words in text",
+  "textareaLabel": "Text to analyze",
+  "textareaPlaceholder": "Enter your text here...",
+  "charWithSpaces": "Character count (with spaces)",
+  "charWithoutSpaces": "Character count (without spaces)",
+  "wordCount": "Word count",
+  "footer": "All calculations are performed in the browser and are not sent to the server. Your input text is processed locally only, so it can be used safely."
+}
