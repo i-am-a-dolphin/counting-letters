@@ -13,5 +13,7 @@
   "upload": "上传",
   "duration": "时长",
   "size": "大小",
-  "noRequests": "无请求"
+  "noRequests": "无请求",
+  "testReceiveRequest": "测试接收请求",
+  "testSendRequest": "测试发送请求"
 }

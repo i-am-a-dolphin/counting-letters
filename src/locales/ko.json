@@ -13,5 +13,7 @@
   "upload": "업로드",
   "duration": "시간",
   "size": "크기",
-  "noRequests": "요청 없음"
+  "noRequests": "요청 없음",
+  "testReceiveRequest": "요청 받기 테스트",
+  "testSendRequest": "요청 보내기 테스트"
 }

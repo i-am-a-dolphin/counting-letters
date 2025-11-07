@@ -13,5 +13,7 @@
   "upload": "Upload",
   "duration": "Duration",
   "size": "Size",
-  "noRequests": "No requests"
+  "noRequests": "No requests",
+  "testReceiveRequest": "Test Receive Request",
+  "testSendRequest": "Test Send Request"
 }
