@@ -11,6 +11,64 @@ interface NetworkEntry {
   startTime: number;
 }
 
+// 파일 설명 키 매핑
+const fileDescriptionKeys: Record<string, string> = {
+  "main.tsx": "fileDesc_main_tsx",
+  "App.tsx": "fileDesc_App_tsx",
+  "NetworkMonitor.tsx": "fileDesc_NetworkMonitor_tsx",
+  "react.js": "fileDesc_react_js",
+  "react-dom_client.js": "fileDesc_react_dom_client_js",
+  "react_jsx-dev-runtime.js": "fileDesc_react_jsx_dev_runtime_js",
+  "@heroui_react.js": "fileDesc_heroui_react_js",
+  "lucide-react.js": "fileDesc_lucide_react_js",
+  "i18next.js": "fileDesc_i18next_js",
+  "react-i18next.js": "fileDesc_react_i18next_js",
+  "index.css": "fileDesc_index_css",
+  "calculator.svg": "fileDesc_calculator_svg",
+  "en.json": "fileDesc_en_json",
+  "ko.json": "fileDesc_ko_json",
+  "zh.json": "fileDesc_zh_json",
+  "i18n.ts": "fileDesc_i18n_ts",
+  "Controls.tsx": "fileDesc_Controls_tsx",
+  "Header.tsx": "fileDesc_Header_tsx",
+  "StatsCard.tsx": "fileDesc_StatsCard_tsx",
+  "count.ts": "fileDesc_count_ts",
+  "useDarkMode.ts": "fileDesc_useDarkMode_ts",
+  "useAutoScroll.ts": "fileDesc_useAutoScroll_ts",
+  "env.mjs": "fileDesc_env_mjs",
+  "@react-refresh": "fileDesc_react_refresh",
+  client: "fileDesc_client",
+  posts: "fileDesc_posts",
+  "1": "fileDesc_1",
+};
+
+// 파일 설명 가져오기 함수 (정규식 패턴 + 다국어 지원)
+const getFileDescription = (fileName: string, t: any): string => {
+  const baseName = fileName.split("/").pop()?.split("?")[0] || fileName;
+
+  // 정규식 패턴 우선 체크
+  if (baseName.match(/^chunk-.*\.js$/)) {
+    return t("fileDesc_chunk_js");
+  }
+  if (baseName.match(/^dist-.*\.js$/)) {
+    return t("fileDesc_dist_js");
+  }
+  if (baseName.match(/^index-.*\.js$/)) {
+    return t("fileDesc_index_js");
+  }
+  if (baseName.match(/^index-.*\.css$/)) {
+    return t("fileDesc_index_css");
+  }
+
+  // 특정 파일 키로 변환
+  const key = fileDescriptionKeys[baseName];
+  if (key) {
+    return t(key);
+  }
+
+  return t("fileDesc_other");
+};
+
 const DOWNLOAD_TEST_ENDPOINT = "https://jsonplaceholder.typicode.com/posts/1";
 const UPLOAD_TEST_ENDPOINT = "https://jsonplaceholder.typicode.com/posts";
 
@@ -149,6 +207,9 @@ export const NetworkMonitor = () => {
                           >
                             {entry.name.split("/").pop()}
                           </div>
+                          <div className="text-gray-500 dark:text-gray-400 text-xs mb-1">
+                            {getFileDescription(entry.name, t)}
+                          </div>
                           <div className="text-gray-600 dark:text-gray-400 text-xs">
                             {t("duration")}: {entry.duration}ms | {t("size")}:{" "}
                             {entry.transferSize} bytes
@@ -189,6 +250,9 @@ export const NetworkMonitor = () => {
                             title={entry.name}
                           >
                             {entry.name.split("/").pop()}
+                          </div>
+                          <div className="text-gray-500 dark:text-gray-400 text-xs mb-1">
+                            {getFileDescription(entry.name, t)}
                           </div>
                           <div className="text-gray-600 dark:text-gray-400 text-xs">
                             {t("duration")}: {entry.duration}ms | {t("size")}:{" "}
