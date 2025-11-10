@@ -38,6 +38,8 @@
   "fileDesc_count_ts": "字母计数工具",
   "fileDesc_useDarkMode_ts": "暗模式切换功能",
   "fileDesc_useAutoScroll_ts": "自动滚动功能",
+  "fileDesc_hero_ts": "HeroUI 配置文件",
+  "fileDesc_fileDescriptions_ts": "文件描述工具",
   "fileDesc_env_mjs": "环境配置文件",
   "fileDesc_react_refresh": "开发中的热重载",
   "fileDesc_client": "初始浏览器连接",

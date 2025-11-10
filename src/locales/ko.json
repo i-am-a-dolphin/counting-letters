@@ -38,6 +38,8 @@
   "fileDesc_count_ts": "글자 수 세기 유틸리티",
   "fileDesc_useDarkMode_ts": "다크모드 토글 기능",
   "fileDesc_useAutoScroll_ts": "자동 스크롤 기능",
+  "fileDesc_hero_ts": "HeroUI 설정 파일",
+  "fileDesc_fileDescriptions_ts": "파일 설명 유틸리티",
   "fileDesc_env_mjs": "환경 설정 파일",
   "fileDesc_react_refresh": "개발 중 자동 새로고침 기능",
   "fileDesc_client": "브라우저 초기 연결",

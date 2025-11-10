@@ -38,6 +38,8 @@
   "fileDesc_count_ts": "Letter counting utility",
   "fileDesc_useDarkMode_ts": "Dark mode toggle feature",
   "fileDesc_useAutoScroll_ts": "Auto-scroll feature",
+  "fileDesc_hero_ts": "HeroUI configuration file",
+  "fileDesc_fileDescriptions_ts": "File descriptions utility",
   "fileDesc_env_mjs": "Environment configuration file",
   "fileDesc_react_refresh": "Hot reload during development",
   "fileDesc_client": "Initial browser connection",
