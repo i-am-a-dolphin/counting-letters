@@ -23,52 +23,54 @@ function App() {
   }, [selectedLanguage, i18n]);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 p-4 flex flex-col md:flex-row items-start justify-center relative gap-6">
+    <div className="bg-white dark:bg-gray-900">
       <Controls
         selectedLanguage={selectedLanguage}
         setSelectedLanguage={setSelectedLanguage}
         isDarkMode={isDarkMode}
         toggleDarkMode={toggleDarkMode}
       />
-      <div className="flex-1 max-w-4xl mt-16 md:mt-0">
-        <Card className="border border-gray-200 dark:border-gray-700">
-          <CardBody className="p-8">
-            <Header />
+      <div className="mt-16 flex flex-col md:flex-row items-start justify-center gap-6 px-4">
+        <div className="flex-1 max-w-4xl">
+          <Card className="border border-gray-200 dark:border-gray-700">
+            <CardBody className="p-8">
+              <Header />
 
-            <div className="mb-8">
-              <Textarea
-                label={t("textareaLabel")}
-                placeholder={t("textareaPlaceholder")}
-                value={text}
-                onChange={(e) => setText(e.target.value)}
-                minRows={8}
-                maxRows={16}
-                style={{ fontSize: "1rem" }} // FIXME: why not working in TailwindCSS? (text-lg)
-                variant="bordered"
-              />
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <StatsCard
-                titleKey="charWithSpaces"
-                value={countCharsWithSpaces(text)}
-              />
-              <StatsCard
-                titleKey="charWithoutSpaces"
-                value={countCharsWithoutSpaces(text)}
-              />
-              <StatsCard titleKey="wordCount" value={countWords(text)} />
-            </div>
+              <div className="mb-8">
+                <Textarea
+                  label={t("textareaLabel")}
+                  placeholder={t("textareaPlaceholder")}
+                  value={text}
+                  onChange={(e) => setText(e.target.value)}
+                  minRows={8}
+                  maxRows={16}
+                  style={{ fontSize: "1rem" }} // FIXME: why not working in TailwindCSS? (text-lg)
+                  variant="bordered"
+                />
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <StatsCard
+                  titleKey="charWithSpaces"
+                  value={countCharsWithSpaces(text)}
+                />
+                <StatsCard
+                  titleKey="charWithoutSpaces"
+                  value={countCharsWithoutSpaces(text)}
+                />
+                <StatsCard titleKey="wordCount" value={countWords(text)} />
+              </div>
 
-            <Divider className="my-6" />
+              <Divider className="my-6" />
 
-            <div className="text-center text-gray-600 dark:text-gray-400 text-sm">
-              {t("footer")}
-            </div>
-          </CardBody>
-        </Card>
-      </div>
-      <div className="w-full md:w-80">
-        <NetworkMonitor />
+              <div className="text-center text-gray-600 dark:text-gray-400 text-sm">
+                {t("footer")}
+              </div>
+            </CardBody>
+          </Card>
+        </div>
+        <div className="w-full md:w-80">
+          <NetworkMonitor />
+        </div>
       </div>
     </div>
   );
