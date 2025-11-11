@@ -23,14 +23,14 @@ function App() {
   }, [selectedLanguage, i18n]);
 
   return (
-    <div className="bg-white dark:bg-gray-900">
+    <>
       <Controls
         selectedLanguage={selectedLanguage}
         setSelectedLanguage={setSelectedLanguage}
         isDarkMode={isDarkMode}
         toggleDarkMode={toggleDarkMode}
       />
-      <div className="mt-16 flex flex-col md:flex-row items-start justify-center gap-6 px-4">
+      <div className="pt-16 flex flex-col md:flex-row items-start justify-center gap-6 px-4">
         <div className="flex-1 max-w-4xl">
           <Card className="border border-gray-200 dark:border-gray-700">
             <CardBody className="p-8">
@@ -68,11 +68,11 @@ function App() {
             </CardBody>
           </Card>
         </div>
-        <div className="w-full md:w-80">
+        <div className="w-full md:w-80 mb-8">
           <NetworkMonitor />
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

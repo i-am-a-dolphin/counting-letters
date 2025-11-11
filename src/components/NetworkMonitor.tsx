@@ -127,7 +127,7 @@ export const NetworkMonitor = () => {
   };
 
   return (
-    <Card className="h-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+    <Card className="h-full border border-gray-200 dark:border-gray-700">
       <CardHeader className="pb-3">
         <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
           {t("networkMonitor")}
