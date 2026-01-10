@@ -53,7 +53,7 @@
   "fileDesc_features_js": "功能包文件（库功能模块）",
   "fileDesc_vite_chunk_js": "由 Vite 自动生成的代码拆分 JavaScript 文件",
   "fileDesc_cloudflare_analytics": "Cloudflare 网页分析请求（使用情况概览，仅统计访问次数）",
-  "fileDesc_cloudflare_rum": "Cloudflare 网站性能测量请求（用于提升加载速度，仅测量速度）"
+  "fileDesc_cloudflare_rum": "Cloudflare 网站性能测量请求（用于提升加载速度，仅测量速度）",
   "fileDesc_other": "其他文件",
   "unknownFileToastTitle": "检测到未知文件",
   "unknownFileToastDesc": "发现需要安全审查的文件"
