@@ -33,15 +33,12 @@ export const fileDescriptionKeys: Record<string, string> = {
 
 // 정규식 패턴 매핑 (패턴 우선순위대로)
 export const patternDescriptions: Array<{ pattern: RegExp; key: string }> = [
-    // Cloudflare Analytics (vcd 해시)
+  // Cloudflare Analytics (vcd 해시)
   { pattern: /^vcd[a-f0-9]{20,}$/, key: "fileDesc_cloudflare_analytics" },
 
   // Vite / Rollup src chunk
   { pattern: /^src-.*\.js$/, key: "fileDesc_vite_chunk_js" },
 
-  // Cloudflare RUM
-  { pattern: /^Rum$/, key: "fileDesc_cloudflare_rum" },
-  
   { pattern: /^chunk-.*\.js$/, key: "fileDesc_chunk_js" },
   { pattern: /^dist-.*\.js$/, key: "fileDesc_dist_js" },
   { pattern: /^index-.*\.js$/, key: "fileDesc_index_js" },
@@ -50,24 +47,31 @@ export const patternDescriptions: Array<{ pattern: RegExp; key: string }> = [
   { pattern: /^features-.*\.js$/, key: "fileDesc_features_js" },
 ];
 
-// 파일 설명 가져오기 함수
+// ✅ 파일 설명 가져오기 함수 (단 하나)
 export const getFileDescription = (
   fileName: string,
   t: (key: string) => string
 ): string => {
-  const baseName = fileName.split("/").pop()?.split("?")[0] || fileName;
+  const clean = fileName.split("?")[0];
 
-  // 정규식 패턴 우선 체크
+  // ✅ Cloudflare RUM (파일 아님, 경로 기반 엔드포인트)
+  if (clean.includes("/cdn-cgi/rum")) {
+    return t("fileDesc_cloudflare_rum");
+  }
+
+  const baseName = clean.split("/").pop() || clean;
+
+  // 정규식 패턴 우선
   for (const { pattern, key } of patternDescriptions) {
     if (pattern.test(baseName)) {
       return t(key);
     }
   }
 
-  // 특정 파일 키로 변환
-  const key = fileDescriptionKeys[baseName];
-  if (key) {
-    return t(key);
+  // 고정 파일명
+  const mappedKey = fileDescriptionKeys[baseName];
+  if (mappedKey) {
+    return t(mappedKey);
   }
 
   return t("fileDesc_other");
