@@ -28,6 +28,7 @@ export const Controls = ({
         <SelectItem key="ko">한국어</SelectItem>
         <SelectItem key="en">English</SelectItem>
         <SelectItem key="zh">中文</SelectItem>
+        <SelectItem key="jp">日本語</SelectItem>
       </Select>
       <Button
         isIconOnly
