@@ -31,6 +31,7 @@
   "fileDesc_en_json": "English translation file",
   "fileDesc_ko_json": "Korean translation file",
   "fileDesc_zh_json": "Chinese translation file",
+  "fileDesc_jp_json": "Japanese translation file",
   "fileDesc_i18n_ts": "Internationalization configuration file",
   "fileDesc_Controls_tsx": "Control button component",
   "fileDesc_Header_tsx": "Header component",
