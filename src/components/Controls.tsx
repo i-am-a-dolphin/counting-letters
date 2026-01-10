@@ -1,9 +1,12 @@
 import { Button, Select, SelectItem } from "@heroui/react";
 import { Moon, Sun } from "lucide-react";
+import type { Dispatch, SetStateAction } from "react";
+
+type Language = "ko" | "en" | "zh" | "ja" | "th";
 
 interface ControlsProps {
-  selectedLanguage: string;
-  setSelectedLanguage: (language: string) => void;
+  selectedLanguage: Language;
+  setSelectedLanguage: Dispatch<SetStateAction<Language>>;
   isDarkMode: boolean;
   toggleDarkMode: () => void;
 }
@@ -18,17 +21,32 @@ export const Controls = ({
     <div className="absolute top-4 right-4 flex items-center space-x-2">
       <Select
         selectedKeys={[selectedLanguage]}
-        onSelectionChange={(keys) =>
-          setSelectedLanguage(Array.from(keys)[0] as string)
-        }
+        onSelectionChange={(keys) => {
+          const next = Array.from(keys)[0] as Language | undefined;
+          if (!next || next === selectedLanguage) return;
+          setSelectedLanguage(next);
+        }}
         size="sm"
         className="w-32"
         aria-label="Select language"
       >
-        <SelectItem key="ko">한국어</SelectItem>
-        <SelectItem key="en">English</SelectItem>
-        <SelectItem key="zh">中文</SelectItem>
+        <SelectItem key="ko" isDisabled={selectedLanguage === "ko"}>
+          한국어
+        </SelectItem>
+        <SelectItem key="en" isDisabled={selectedLanguage === "en"}>
+          English
+        </SelectItem>
+        <SelectItem key="zh" isDisabled={selectedLanguage === "zh"}>
+          中文
+        </SelectItem>
+        <SelectItem key="ja" isDisabled={selectedLanguage === "ja"}>
+          日本語
+        </SelectItem>
+        <SelectItem key="th" isDisabled={selectedLanguage === "th"}>
+          ไทย
+        </SelectItem>
       </Select>
+
       <Button
         isIconOnly
         size="sm"
