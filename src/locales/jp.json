@@ -16,7 +16,6 @@
   "noRequests": "リクエストなし",
   "downloadTest": "ダウンロードテスト",
   "uploadTest": "アップロードテスト",
-
   "fileDesc_main_tsx": "Reactアプリのエントリーポイントファイル（アプリ実行のメインコード）",
   "fileDesc_App_tsx": "メインアプリケーションコンポーネント（アプリ全体の構造を定義）",
   "fileDesc_NetworkMonitor_tsx": "ネットワーク監視コンポーネント（このログを生成）",
