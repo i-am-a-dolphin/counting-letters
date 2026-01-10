@@ -33,6 +33,15 @@ export const fileDescriptionKeys: Record<string, string> = {
 
 // 정규식 패턴 매핑 (패턴 우선순위대로)
 export const patternDescriptions: Array<{ pattern: RegExp; key: string }> = [
+    // Cloudflare Analytics (vcd 해시)
+  { pattern: /^vcd[a-f0-9]{20,}$/, key: "fileDesc_cloudflare_analytics" },
+
+  // Vite / Rollup src chunk
+  { pattern: /^src-.*\.js$/, key: "fileDesc_vite_chunk_js" },
+
+  // Cloudflare RUM
+  { pattern: /^Rum$/, key: "fileDesc_cloudflare_rum" },
+  
   { pattern: /^chunk-.*\.js$/, key: "fileDesc_chunk_js" },
   { pattern: /^dist-.*\.js$/, key: "fileDesc_dist_js" },
   { pattern: /^index-.*\.js$/, key: "fileDesc_index_js" },
