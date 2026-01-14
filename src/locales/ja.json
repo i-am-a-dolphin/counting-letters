@@ -6,6 +6,7 @@
   "charWithSpaces": "文字数（空白含む）",
   "charWithoutSpaces": "文字数（空白除く）",
   "wordCount": "単語数",
+  "lineCount": "行数",
   "footer": "すべての計算はブラウザ内で行われ、サーバーには送信されません。入力したテキストはローカルでのみ処理されるため、安全にご利用いただけます。",
   "networkMonitor": "ネットワークモニター",
   "noNetworkRequests": "ネットワークリクエストなし",

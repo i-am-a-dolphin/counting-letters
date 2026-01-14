@@ -6,6 +6,7 @@
   "charWithSpaces": "Character count (with spaces)",
   "charWithoutSpaces": "Character count (without spaces)",
   "wordCount": "Word count",
+  "lineCount": "Line count",
   "footer": "All calculations are performed in the browser and are not sent to the server. Your input text is processed locally only, so it can be used safely.",
   "networkMonitor": "Network Monitor",
   "noNetworkRequests": "No network requests",

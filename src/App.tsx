@@ -12,6 +12,7 @@ import {
   countCharsWithoutSpaces,
   countWords,
   countThaiWords,
+  countLines,
 } from "./utils/count";
 import { FooterInfo } from "./components/FooterInfo";
 
@@ -106,14 +107,21 @@ function App() {
                     titleKey="charWithoutSpaces"
                     value={countCharsWithoutSpaces(text)}
                   />
-                  <StatsCard
-                    titleKey="wordCount"
-                    value={
-                      selectedLanguage === "th"
-                        ? countThaiWords(text)
-                        : countWords(text)
-                    }
-                  />
+                  {selectedLanguage === "ja" ? (
+                    <StatsCard
+                      titleKey="lineCount"
+                      value={countLines(text)}
+                    />
+                  ) : (
+                    <StatsCard
+                      titleKey="wordCount"
+                      value={
+                        selectedLanguage === "th"
+                          ? countThaiWords(text)
+                          : countWords(text)
+                      }
+                    />
+                  )}
                 </div>
               ) : (
                 <ZhStats
