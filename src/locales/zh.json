@@ -1,5 +1,5 @@
 {
-  "title": "字母计数器",
+  "title": "字數統計",
   "description": "准确计算文本中的字符和单词数量",
   "textareaLabel": "要分析的文本",
   "textareaPlaceholder": "在这里输入您的文本...",
@@ -31,6 +31,8 @@
   "fileDesc_en_json": "英语翻译文件",
   "fileDesc_ko_json": "韩语翻译文件",
   "fileDesc_zh_json": "中文翻译文件",
+  "fileDesc_ja_json": "日语翻译文件",
+  "fileDesc_th_json": "泰语翻译文件",
   "fileDesc_i18n_ts": "国际化配置文件",
   "fileDesc_Controls_tsx": "控制按钮组件",
   "fileDesc_Header_tsx": "标题组件",
@@ -51,7 +53,27 @@
   "fileDesc_index_css": "构建的主样式表文件（生产优化）",
   "fileDesc_es_js": "ES 模块包文件（JavaScript 模块优化）",
   "fileDesc_features_js": "功能包文件（库功能模块）",
+  "fileDesc_vite_chunk_js": "由 Vite 自动生成的代码拆分 JavaScript 文件",
+  "fileDesc_cloudflare_analytics": "Cloudflare 网页分析请求（使用情况概览，仅统计访问次数）",
+  "fileDesc_cloudflare_rum": "Cloudflare 网站性能测量请求（用于提升加载速度，仅测量速度）",
   "fileDesc_other": "其他文件",
   "unknownFileToastTitle": "检测到未知文件",
-  "unknownFileToastDesc": "发现需要安全审查的文件"
+  "unknownFileToastDesc": "发现需要安全审查的文件",
+  "zh_chineseChars": "中文字数",
+  "zh_englishWords": "英文单词数",
+  "zh_total": "合计（中文字数 + 英文单词数）",
+  "zh_showAdvanced": "显示高级统计",
+  "zh_hideAdvanced": "隐藏高级统计",
+  "zh_chinesePunct": "中文标点符号数",
+  "zh_englishChars": "英文字母数",
+  "zh_englishPunct": "英文标点符号数",
+  "zh_digits": "数字",
+  "zh_lines": "行数（段落）",
+  "zh_bytes": "字节数（UTF-8）",
+  "footerInfo": {
+  "safetyTitle": "为什么这个网站是安全的？",
+  "safetyBody": "本网站不会将您输入的文本发送到任何服务器。\n\n所有的字数统计和分析都只在您的浏览器中完成，输入的内容不会被传输或存储到外部。\n\n右侧显示的网络监视器会实时展示本网站当前与浏览器之间的通信情况。\n\n这与您在 Chrome、Safari 等浏览器中打开开发者工具并查看 Network 标签页时看到的信息是完全一致的。\n\n本网站加载的所有脚本和文件，都会同时记录在网络监视器以及浏览器开发者工具的 Network 标签页中。\n\n例如，当您点击下载按钮时，会看到名为“1”的请求；点击上传按钮时，会看到名为“Posts”的请求，这些内容会在两处同时显示。\n\n相反，当您在“要分析的文本”输入框中输入文字时，并不会产生任何网络请求。\n\n通过这一点，您可以自行确认输入的文本并未被发送到服务器。\n\n※ 为了页面加载和性能测量（如 RUM），网站仍然会进行必要的最小网络通信，但输入的文本内容不会在任何情况下发送到服务器。\n\n※ 本网站并非安全工具，仅适用于一般的网页使用场景。\n\n※ 本说明基于当前的网站运行方式，实际表现可能会因浏览器环境不同而有所差异。",
+  "adsTitle": "为什么没有广告？",
+  "adsBody": "这是一个需要写很多文字的时代。\n\n无论是在学校、工作中，还是在外出时临时使用，我们都不希望不必要或令人尴尬的广告影响使用体验。\n\n因为我个人非常重视广告和个人数据，同时也切实感受到了这种工具的必要性，所以决定亲自制作这个网站。\n\n希望你可以随时、轻松、安心地使用它。"
+}
 }
