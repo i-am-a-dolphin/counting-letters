@@ -5,20 +5,13 @@ import { Controls } from "./components/Controls";
 import { Header } from "./components/Header";
 import { NetworkMonitor } from "./components/NetworkMonitor";
 import { StatsCard } from "./components/StatsCard";
+import { ZhStats } from "./components/ZhStats";
 import { useDarkMode } from "./hooks/useDarkMode";
 import {
   countCharsWithSpaces,
   countCharsWithoutSpaces,
   countWords,
   countThaiWords,
-  countChineseChars,
-  countEnglishWords,
-  countChinesePunctuation,
-  countEnglishChars,
-  countEnglishPunctuation,
-  countDigits,
-  countLines,
-  countBytes,
 } from "./utils/count";
 import { FooterInfo } from "./components/FooterInfo";
 
@@ -123,66 +116,11 @@ function App() {
                   />
                 </div>
               ) : (
-                (() => {
-                  const chineseChars = countChineseChars(text);
-                  const englishWords = countEnglishWords(text);
-                  const total = chineseChars + englishWords;
-
-                  const chinesePunct = countChinesePunctuation(text);
-                  const englishChars = countEnglishChars(text);
-                  const englishPunct = countEnglishPunctuation(text);
-                  const digits = countDigits(text);
-                  const lines = countLines(text);
-                  const bytes = countBytes(text);
-
-                  return (
-                    <>
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-4">
-                        <StatsCard
-                          titleKey="zh_chineseChars"
-                          value={chineseChars}
-                        />
-                        <StatsCard
-                          titleKey="zh_englishWords"
-                          value={englishWords}
-                        />
-                        <StatsCard titleKey="zh_total" value={total} />
-                      </div>
-
-                      <div className="flex justify-center mb-8">
-                        <button
-                          type="button"
-                          onClick={() => setShowAdvancedZh((v) => !v)}
-                          className="text-sm font-medium text-gray-700 dark:text-gray-300 underline"
-                        >
-                          {showAdvancedZh
-                            ? t("zh_hideAdvanced")
-                            : t("zh_showAdvanced")}
-                        </button>
-                      </div>
-
-                      {showAdvancedZh && (
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                          <StatsCard
-                            titleKey="zh_chinesePunct"
-                            value={chinesePunct}
-                          />
-                          <StatsCard
-                            titleKey="zh_englishChars"
-                            value={englishChars}
-                          />
-                          <StatsCard
-                            titleKey="zh_englishPunct"
-                            value={englishPunct}
-                          />
-                          <StatsCard titleKey="zh_digits" value={digits} />
-                          <StatsCard titleKey="zh_lines" value={lines} />
-                          <StatsCard titleKey="zh_bytes" value={bytes} />
-                        </div>
-                      )}
-                    </>
-                  );
-                })()
+                <ZhStats
+                  text={text}
+                  showAdvanced={showAdvancedZh}
+                  onToggleAdvanced={() => setShowAdvancedZh((v) => !v)}
+                />
               )}
 
               <Divider className="my-6" />
